@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:login_method/model/loginmodel.dart';
 import 'package:login_method/utils/shared_preference.dart';
+import 'package:sizer/sizer.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -18,9 +20,22 @@ class _SplashScreenState extends State<SplashScreen> {
       l.logino_option==true?Navigator.pushNamed(context, "home"):Navigator.pushNamed(context, "login");
     },);
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Center(
-        child: Image.network("https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg?w=2000",
-            fit: BoxFit.fill, height: 250, width: 250),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset("assets/logo.png",height: 50.h,width: 50.h,
+                fit: BoxFit.fill),
+            Text(
+              "coding tutorial",
+              style: GoogleFonts.sourceCodePro(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.teal.shade400),
+            ),
+          ],
+        ),
       ),
     );
   }
